@@ -30,18 +30,22 @@ return [
 
     'disks' => [
 
+        // file di simpan di folder storage/app
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
 
+        // file di simpan di folder storage/app/public,
+        // tapi ada shortcut simbolik ke folder public/storage di root project.
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
 
+        // File disimpen di bucket di layanan cloud Amazon S3.
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
