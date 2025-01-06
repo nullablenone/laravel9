@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\ResponseController;
@@ -20,3 +21,7 @@ Route::post('/file/upload', [FileController::class, 'fileUpload']);
 Route::get('/response/test', [ResponseController::class, 'response']);
 Route::get('/response/header', [ResponseController::class, 'header']);
 Route::get('/response/json', [ResponseController::class, 'Responsejson']);
+
+Route::get('/cookie/setCookie', [CookieController::class, 'setCookie']);
+Route::get('/cookie/getCookie', [CookieController::class, 'getCookie']);
+Route::get('/cookie/clearCookie', [CookieController::class, 'clearCookie']);
