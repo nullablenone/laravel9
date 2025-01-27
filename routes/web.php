@@ -29,3 +29,7 @@ Route::get('/cookie/clearCookie', [CookieController::class, 'clearCookie']);
 
 Route::get('/redirect/to', [RedirectController::class, 'redirectTo']);
 Route::get('/redirect/form', [RedirectController::class, 'redirectForm']);
+
+Route::get('/middleware/test', function () {
+    return "Oke!";
+})->middleware(['contoh']);
