@@ -14,12 +14,12 @@ class ContohMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, string $key, int $status)
     {
-        if ($request->header('name') == 'nullablenone') {
+        if ($request->header('name') == $key) {
             return $next($request);
         } else {
-            return response("invalid", 401);
+            return response("invalid", $status);
         }
     }
 }

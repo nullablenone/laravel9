@@ -32,4 +32,4 @@ Route::get('/redirect/form', [RedirectController::class, 'redirectForm']);
 
 Route::get('/middleware/test', function () {
     return "Oke!";
-})->middleware(['contoh']);
+})->middleware(['contoh:nullablenone, 401']);
