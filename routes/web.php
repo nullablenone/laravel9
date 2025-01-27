@@ -17,7 +17,8 @@ Route::post('/input/filterOnly', [InputController::class, 'InputFilterOnly']);
 Route::post('/input/filterExcept', [InputController::class, 'InputFilterExcept']);
 Route::post('/input/filterMerge', [InputController::class, 'InputFilterMerge']);
 
-Route::post('/file/upload', [FileController::class, 'fileUpload']);
+Route::post('/file/upload', [FileController::class, 'fileUpload'])
+    ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 
 Route::get('/response/test', [ResponseController::class, 'response']);
 Route::get('/response/header', [ResponseController::class, 'header']);
